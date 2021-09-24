@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Bhargava A" />
+    <title>Jokesmania</title>
+    <meta name="description" content="A random joke generator"/>
+    <link rel="icon" type="image/png" href="./mylogo.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Mali:wght@200&family=Stick+No+Bills&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body id="bodyTheme" class="light">
+    <span id="theme" class="material-icons">brightness_4</span>
+    <section>
+      <div class="title">
+        <p class="title1 data-tilt">Jokesmania</p>
+        <span>A Random Joke Generator</span><br />
+      </div>
+      <div class="container data-tilt">
+        <div id="joke" class="joke">
+        </div>
+        <button id="get_joke" class="btn data-tilt">Get Another Joke</button>
+      </div>
+    </section>
+    <div class="footer">
+      <p>&copy; 2021 | Created by <a href="https://bhargava73.github.io/" style="color:#53b8bb"> Bhargava A</a> using <a href="https://jokeapi.dev/">jokeapi.dev</a></p>
+    </div>
+    <script src="./index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+    <script>
+      $(".title1").tilt();
+      $(".btn").tilt();
+    </script>
+  </body>
+</html>
