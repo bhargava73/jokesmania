@@ -15,6 +15,7 @@ body {
 	--clr-txt: #000000;
 	--clr-txt-1: #9a9a9a;
 	--clr-bg: #fffffe;
+	--clr-icon: #626262;
 	--clr-card-bg: #f1f3f6;
 	--clr-title: #53b8bb;
 	--clr-span: #b68973;
@@ -25,13 +26,14 @@ body {
 .dark {
 	--clr-bg: #0a0a0a;
 	--clr-txt: #ffffff;
+	--clr-icon: #a5a5a5;
 	--clr-card-bg: #111112;
 	--clr-span: #ffc964;
 }
 
 #theme {
 	position: fixed;
-	color: var(--clr-txt);
+	color: var(--clr-icon);
 	margin: 10px;
 	right: 0;
 	font-size: 28px;
@@ -81,6 +83,20 @@ section {
 	max-width: 100%;
 	width: 800px;
 	transition: all 0.5s ease-in;
+}
+
+.container #talk {
+	float: right;
+	margin-top: -28px;
+	outline: none;
+	border: none;
+	border-radius: 100%;
+	background: transparent;
+	color: var(--clr-icon);
+}
+
+.container #talk:hover {
+	color: var(--clr-title);
 }
 
 h3 {

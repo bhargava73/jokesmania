@@ -32,3 +32,38 @@ theme.addEventListener("click", function () {
 		theme.innerHTML = "brightness_4";
 	}
 });
+
+let speech = new SpeechSynthesisUtterance();
+speech.lang = "en";
+
+let speechContainer = document.querySelector("#talk");
+
+const changeIcon = function () {
+	if (speechContainer.innerHTML === "volume_up") {
+		speechContainer.innerHTML = "volume_off";
+	} else {
+		speechContainer.innerHTML = "volume_up";
+	}
+};
+let flag = 0;
+document.querySelector(".play").addEventListener("click", () => {
+	speech.text = document.querySelector("#joke").innerHTML;
+	if (flag === 0) {
+		flag = 1;
+		changeIcon();
+		window.speechSynthesis.speak(speech);
+		speech.addEventListener("end", function () {
+			flag = 0;
+			changeIcon();
+		});
+	} else {
+		flag = 0;
+		window.speechSynthesis.cancel();
+		changeIcon();
+	}
+	// speechContainer.classList.remove("play");
+	// speechContainer.classList.add("stop");
+
+	// window.speechSynthesis.speak(speech);
+	// changeIcon();
+});
