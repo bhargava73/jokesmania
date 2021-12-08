@@ -39,10 +39,10 @@ speech.lang = "en";
 let speechContainer = document.querySelector("#talk");
 
 const changeIcon = function () {
-	if (speechContainer.innerHTML === "volume_up") {
-		speechContainer.innerHTML = "volume_off";
-	} else {
+	if (speechContainer.innerHTML === "volume_off") {
 		speechContainer.innerHTML = "volume_up";
+	} else {
+		speechContainer.innerHTML = "volume_off";
 	}
 };
 let flag = 0;

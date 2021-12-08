@@ -22,7 +22,7 @@
         <span>A Random Joke Generator</span><br />
       </div>
       <div class="container data-tilt">
-        <button id="talk" class="material-icons play">volume_up</button>
+        <button id="talk" class="material-icons play">volume_off</button>
         <div id="joke" class="joke">
         </div>
         <button id="get_joke" class="btn data-tilt">Get Another Joke</button>
@@ -37,6 +37,9 @@
     <script>
       $(".title1").tilt();
       $(".btn").tilt();
+      $(".play").click(function () {
+        $(this).toggleClass("clickColor");
+      });
     </script>
   </body>
 </html>
