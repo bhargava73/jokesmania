@@ -45,21 +45,29 @@ const changeIcon = function () {
 		speechContainer.innerHTML = "volume_off";
 	}
 };
+
+const changeColor = function () {
+	let element = document.getElementById("talk");
+	element.classList.toggle("clickColor");
+};
 let flag = 0;
 document.querySelector(".play").addEventListener("click", () => {
 	speech.text = document.querySelector("#joke").innerHTML;
 	if (flag === 0) {
 		flag = 1;
+		changeColor();
 		changeIcon();
 		window.speechSynthesis.speak(speech);
 		speech.addEventListener("end", function () {
 			flag = 0;
 			changeIcon();
+			changeColor();
 		});
 	} else {
 		flag = 0;
 		window.speechSynthesis.cancel();
 		changeIcon();
+		changeColor();
 	}
 	// speechContainer.classList.remove("play");
 	// speechContainer.classList.add("stop");

@@ -154,6 +154,6 @@ h3 {
 	color: var(--clr-btn-bg);
 }
 
-.container .play.clickColor {
+.clickColor {
 	color: var(--clr-title) !important;
 }
