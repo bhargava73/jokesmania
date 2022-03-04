@@ -4,11 +4,12 @@ const theme = document.getElementById("theme");
 const bodyTheme = document.getElementById("bodyTheme");
 
 get_joke.addEventListener("click", generateJoke);
-
+let speechContainer = document.querySelector("#talk");
 generateJoke();
 
 async function generateJoke() {
-	const jokeRes = await fetch("https://v2.jokeapi.dev/joke/Programming,Pun,Spooky?blacklistFlags=nsfw,political,racist,sexist", {
+	window.speechSynthesis.cancel();
+	const jokeRes = await fetch("https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Dark,Spooky?blacklistFlags=nsfw,religious,political,racist,sexist,explicit", {
 		headers: {
 			Accept: "application/json",
 		},
@@ -47,7 +48,6 @@ const changeIcon = function () {
 		changeColor();
 	}
 };
-let speechContainer = document.querySelector("#talk");
 
 let flag = 0;
 document.querySelector(".play").addEventListener("click", () => {
