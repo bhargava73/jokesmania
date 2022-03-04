@@ -33,45 +33,42 @@ theme.addEventListener("click", function () {
 	}
 });
 
-let speech = new SpeechSynthesisUtterance();
-speech.lang = "en";
-
-let speechContainer = document.querySelector("#talk");
-
-const changeIcon = function () {
-	if (speechContainer.innerHTML === "volume_off") {
-		speechContainer.innerHTML = "volume_up";
-	} else {
-		speechContainer.innerHTML = "volume_off";
-	}
-};
-
 const changeColor = function () {
 	let element = document.getElementById("talk");
 	element.classList.toggle("clickColor");
 };
+
+const changeIcon = function () {
+	if (speechContainer.innerHTML === "stop") {
+		speechContainer.innerHTML = "play_arrow";
+		changeColor();
+	} else {
+		speechContainer.innerHTML = "stop";
+		changeColor();
+	}
+};
+let speechContainer = document.querySelector("#talk");
+
 let flag = 0;
 document.querySelector(".play").addEventListener("click", () => {
+	let speech = new SpeechSynthesisUtterance();
+	speech.lang = "en";
 	speech.text = document.querySelector("#joke").innerHTML;
-	if (flag === 0) {
+	if (flag == 0) {
 		flag = 1;
-		changeColor();
 		changeIcon();
 		window.speechSynthesis.speak(speech);
 		speech.addEventListener("end", function () {
 			flag = 0;
 			changeIcon();
-			changeColor();
 		});
 	} else {
 		flag = 0;
 		window.speechSynthesis.cancel();
-		changeIcon();
-		changeColor();
 	}
+
 	// speechContainer.classList.remove("play");
 	// speechContainer.classList.add("stop");
 
 	// window.speechSynthesis.speak(speech);
-	// changeIcon();
 });
